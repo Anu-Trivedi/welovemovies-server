@@ -1,6 +1,8 @@
 if (process.env.USER) require("dotenv").config();
 const express = require("express");
 const app = express();
+const port = process.env.PORT || 4000;
+
 
 const moviesRouter = require("./movies/movies.router");
 const theatersRouter = require("./theaters/theaters.router");
