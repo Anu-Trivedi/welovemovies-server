@@ -6,7 +6,7 @@ function list(isShowing = false) {
       .join("movies_theaters as mt", "mt.movie_id", "m.movie_id")
       .select("*")
       .where({ "mt.is_showing": true })
-      .groupBy("mt.movie_id");
+      .groupBy("mt.movie_id, m.movie_id");
   }
   return knex("movies as m").select("*");
 }
